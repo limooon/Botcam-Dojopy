@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Todo List</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .container {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+    
+    form {
+        margin-bottom: 20px;
+    }
+    
+    input[type="text"] {
+        padding: 10px;
+        width: 70%;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    
+    button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    li {
+        background-color: #f9f9f9;
+        padding: 10px;
+        margin-bottom: 5px;
+        border-radius: 5px;
+    }
+    
+    input[type="text"]#search-input {
+        margin-top: 20px;
+    }
+    
+</style>
+<body>
+    <div class="container">
+        <h1>Todo List</h1>
+        <form id="todo-form">
+            <input type="text" id="todo-input" placeholder="Enter todo item">
+            <button type="submit">Add</button>
+        </form>
+        <input type="text" id="search-input" placeholder="Search">
+        <ul id="todo-list"></ul>
+    </div>
+
+<script>
+    var todos = [];
+
+    document.getElementById('todo-form').addEventListener('submit', handleTodoFormSubmit);
+    document.getElementById('search-input').addEventListener('input', handleSearchInput);
+    
+    function handleTodoFormSubmit(event) {
+        event.preventDefault();
+        const todoInput = document.getElementById('todo-input').value.trim();
+        if (todoInput !== '') {
+            addTodoItem(todoInput);
+            document.getElementById('todo-input').value = '';
+        }
+    }
+    
+    function addTodoItem(todoText) {
+        
+        var todoList = document.getElementById('todo-list');
+        var li = document.createElement('li');
+        li.textContent = todoText;
+        var todoItem = { text: todoText, element: li };
+        todos.push(todoItem);
+
+        var deleteButton = document.createElement('button');
+        deleteButton.textContent = '❌';
+        deleteButton.classList.add('delete-btn');
+        deleteButton.addEventListener('click', function() {
+            deleteTodoItem(todoItem);
+        });
+        li.appendChild(deleteButton);
+        todoList.appendChild(li);
+    }
+    
+    function deleteTodoItem(todoItem) {
+        var index = todos.indexOf(todoItem);
+        if (index !== -1) {
+            todos.splice(index, 1);
+            todoItem.element.remove();
+        }
+    }
+    
+    function handleSearchInput() {
+        var searchTerm = this.value.trim().toLowerCase();
+        todos.forEach(function(todoItem) {
+            var todoText = todoItem.text.toLowerCase();
+            if (todoText.includes(searchTerm)) {
+                todoItem.element.style.display = 'block';
+            } else {
+                todoItem.element.style.display = 'none';
+            }
+        });
+    }
+    
+</script>
+</body>
+</html>

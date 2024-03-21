@@ -1,0 +1,173 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%; /* Set body height to 100% */
+}
+header {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.buscador {
+    display: flex;
+    align-items: center;
+    margin-left: 150px;
+    background-color: #f2f2f2;
+    padding: 8px;
+    border-radius: 5px;
+}
+.buscador svg {
+    margin-right: 8px;
+    color: #555;
+}
+.buscador input {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 200px;
+    font-size: 16px;
+}
+.enlaces{
+    position: absolute;
+    top: 7;
+    right: 0;
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+    margin-right: 65px;
+}
+.enlaces a svg{
+    color: #080808;
+    display: block;
+    padding: 20px;
+    transition: background-color 0.3s;
+}
+.enlaces a svg:hover {
+    border: 1px solid rgb(9, 89, 228);
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(8, 63, 158, 0.5);
+    color: rgb(1, 1, 1);  
+    transition: all 0.3s ease;
+    padding: 20px; 
+}
+.logo{
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 100px;
+    height: 110px;
+    border-radius: 15px;
+    margin-left: 10px;
+}
+.logo img{
+    width: 100%;
+    max-height: 90%;
+    object-fit: cover;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: black;
+    min-height: 100vh; 
+}
+.card-store {
+    text-align: center;
+    width: 200px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    background-color: aliceblue;
+    border-radius: 15px;
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+
+.card-store:hover {
+    transform: scale(1.1);
+    
+}
+
+.card-store button{
+    border: none;
+    cursor: pointer;
+    color: #f2f2f2;
+    border-radius: 15px;
+    max-height: 100px;
+    background: rgb(100,93,215);
+    background: linear-gradient(90deg, rgba(100,93,215,1) 28%, rgba(120,79,170,1) 57%, rgba(50,156,219,1) 85%, rgba(0,212,255,1) 100%);
+}
+.card-store button:hover{
+    color: black;
+    transition: all 2s ease;
+    background: rgb(27,194,102);
+    background: linear-gradient(90deg, rgba(27,194,102,1) 28%, rgba(35,179,153,1) 36%, rgba(79,170,79,1) 62%, rgba(50,219,152,1) 87%, rgba(7,157,100,1) 100%); 
+}
+.img-content {
+    width: 200px;
+    height: 220px;
+}
+.img-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media (max-width: 767px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+    .enlaces {
+        position: static; /* Cambiar a posición estática */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto; /* O ajusta el margen según sea necesario */
+    }
+    .enlaces a svg:hover{
+        color: black;
+        margin: 5px;
+        border-radius: 15px;
+        padding: 10px;
+        
+     }
+}
+@media (max-width: 400px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .buscador {
+        margin-left: 50px;
+    }
+    .enlaces {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        margin: 0 auto; 
+    }
+    .enlaces a svg{
+        color: #080808;
+        display: block;
+        transition: background-color 0.3s;
+    }
+    .enlaces a svg:hover {
+        border: 1px solid rgb(9, 89, 228);
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(8, 63, 158, 0.5);
+        color: rgb(1, 1, 1);
+        transition: all 0.3s ease;
+        padding: 10px; 
+    }
+}

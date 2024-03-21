@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.17.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/atyle.css">
+    <title>Catalogo</title>
+    
+</head>
+<body>
+    <header>
+            <div class="logo">
+                 <img src="https://previews.123rf.com/images/themoderncanvas/themoderncanvas1902/themoderncanvas190200011/118845996-signo-de-concesionario-de-autos-deportivos-de-tienda-de-autom%C3%B3viles-con-un-icono-de-silueta-de.jpg" alt="logo">
+            </div>
+            <div class="buscador">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                </svg>
+                <input type="search" name="" id="serch" placeholder="Search..." />
+            </div>
+            <div class="enlaces">
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                    </svg>
+                  </a>
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-car-front" viewBox="0 0 16 16">
+                        <path d="M4 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0m10 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2zM4.862 4.276 3.906 6.19a.51.51 0 0 0 .497.731c.91-.073 2.35-.17 3.597-.17s2.688.097 3.597.17a.51.51 0 0 0 .497-.731l-.956-1.913A.5.5 0 0 0 10.691 4H5.309a.5.5 0 0 0-.447.276"/>
+                        <path d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679q.05.242.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.8.8 0 0 0 .381-.404l.792-1.848ZM4.82 3a1.5 1.5 0 0 0-1.379.91l-.792 1.847a1.8 1.8 0 0 1-.853.904.8.8 0 0 0-.43.564L1.03 8.904a1.5 1.5 0 0 0-.03.294v.413c0 .796.62 1.448 1.408 1.484 1.555.07 3.786.155 5.592.155s4.037-.084 5.592-.155A1.48 1.48 0 0 0 15 9.611v-.413q0-.148-.03-.294l-.335-1.68a.8.8 0 0 0-.43-.563 1.8 1.8 0 0 1-.853-.904l-.792-1.848A1.5 1.5 0 0 0 11.18 3z"/>
+                    </svg>
+                  </a>
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
+                        <path d="M16 8c0 3.866-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7M5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0m4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                    </svg>
+                  </a>
+            </div>  
+    </header>
+    <div class="container">
+        <div class="card-store">
+            <div class="img-content">
+                <img src="https://www.autozone.com.mx/images/MEDIA_ProductCatalog/m11540005_Prod-Leather.jpg" alt="producto">
+            </div>
+            <h2>informacion de la card</h2>
+            <h3>precio $ 000</h3>
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                    <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                </svg>
+            </button>
+        </div>
+        <div class="card-store">
+            <div class="img-content">
+                <img src="data:image/jpeg;base64,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" alt="producto">
+            </div>
+            <h2>informacion de la card</h2>
+            <h3>precio $ 000</h3>
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                    <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                </svg>
+            </button>
+        </div>
+        <div class="card-store">
+            <div class="img-content">
+                <img src="data:image/jpeg;base64,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" alt="producto">
+            </div>
+            <h2>informacion de la card</h2>
+            <h3>precio $ 000</h3>
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                    <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                </svg>
+            </button>
+        </div>
+        <div class="card-store">
+            <div class="img-content">
+                <img src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1640092684-41ysLwZnp1L._SL500_.jpg?crop=1xw:1.00xh;center,top&resize=980:*" alt="producto">
+            </div>
+            <h2>informacion de la card</h2>
+            <h3>precio $ 000</h3>
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                    <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                </svg>
+            </button>
+        </div>
+        <div class="card-store">
+            <div class="img-content">
+                <img src="https://media.motordoctor.de/360_photos/15233637/preview.jpg" alt="producto">
+            </div>
+            <h2>informacion de la card</h2>
+            <h3>precio $ 000</h3>
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                    <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                </svg>
+            </button>
+        </div>
+        <div class="card-store">
+            <div class="img-content">
+                <img src="https://www.autozone.com.mx/images/MEDIA_ProductCatalog/m11540005_Prod-Leather.jpg" alt="producto">
+            </div>
+            <h2>informacion de la card</h2>
+            <h3>precio $ 000</h3>
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                    <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                </svg>
+            </button>
+        </div>
+        <div class="card-store">
+            <div class="img-content">
+                <img src="https://cdn.ready-market.com.tw/edc2613d/Templates/pic/MX_PRO_A.jpg?v=f508f1b4" alt="producto">
+            </div>
+            <h2>informacion de la card</h2>
+            <h3>precio $ 000</h3>
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                    <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                </svg>
+            </button>
+        </div>
+        <div class="card-store">
+            <div class="img-content">
+                <img src="https://veraclin.pe/img/productos/SHAMPOO-DE-AUTOS.jpg" alt="producto">
+            </div>
+            <h2>informacion de la card</h2>
+            <h3>precio $ 000</h3>
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                    <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                </svg>
+            </button>
+        </div>
+        <div class="card-store">
+            <div class="img-content">
+                <img src="https://s.alicdn.com/@sc04/kf/H753bf7e004f245938a7a7ec84a36713aW.jpg_300x300.jpg" alt="producto">
+            </div>
+            <h2>informacion de la card</h2>
+            <h3>precio $ 000</h3>
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                    <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                </svg>
+            </button>
+        </div>
+        <div class="card-store">
+            <div class="img-content">
+                <img src="https://www.quakerstate.com.mx/wp-content/uploads/2022/10/full-synthetic-pro-100-sintetico-1024x1024.png" alt="producto">
+            </div>
+            <h2>informacion de la card</h2>
+            <h3>precio $ 000</h3>
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                    <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                </svg>
+            </button>
+        </div>
+        <div class="card-store">
+            <div class="img-content">
+                <img src="https://www.ferrisariato.com/wp-content/uploads/2020/07/40304921_01.jpg" alt="producto">
+            </div>
+            <h2>informacion de la card</h2>
+            <h3>precio $ 000</h3>
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                    <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                </svg>
+            </button>
+        </div>
+        <div class="card-store">
+            <div class="img-content">
+                <img src="https://alvagargrupo.com/wp-content/uploads/limpiador-inyectores-gasolina-1.jpg" alt="producto">
+            </div>
+            <h2>informacion de la card</h2>
+            <h3>precio $ 000</h3>
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                    <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                </svg>
+            </button>
+        </div>
+        <div class="card-store">
+            <div class="img-content">
+                <img src="https://www.truper.com/media/product/15c/juego-11-accesorios-de-limpieza-y-pulido-p-taladro-pretul-b6b.jpg" alt="producto">
+            </div>
+            <h2>informacion de la card</h2>
+            <h3>precio $ 000</h3>
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                    <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                </svg>
+            </button>
+        </div>
+        <div class="card-store">
+            <div class="img-content">
+                <img src="https://e7.pngegg.com/pngimages/714/636/png-clipart-laundry-washing-car-wash-cleaning-car-room-car.png" alt="producto">
+            </div>
+            <h2>informacion de la card</h2>
+            <h3>precio $ 000</h3>
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                    <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z"/>
+                    <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                </svg>
+            </button>
+        </div>
+        
+    </div>
+    <script src="../"></script>
+</body>
+</html>

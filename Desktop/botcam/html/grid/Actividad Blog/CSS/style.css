@@ -1,0 +1,231 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto auto auto;
+    gap: 5px;
+    background-color: rgb(255, 254, 254);
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    grid-column: 1 / 6;
+    height: 100px;
+    border-bottom: 1px solid black;
+}
+header:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+header h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+    color: #0077b5;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra suave */
+    transition: text-shadow 0.3s ease; /* Efecto de transición suave en la sombra del texto */
+}
+header h1:hover{
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7); /* Nueva sombra cuando se hace hover */
+}
+
+aside {
+    text-align: center;
+    grid-column: 1 / 2;
+    height: calc(100vh - 50px);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    border:1px solid black;
+}
+aside:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Añade una sombra sutil al hacer hover */
+}
+
+aside h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+aside li {
+    margin-top: 5px;
+}
+
+aside a {
+    text-decoration: none;
+    color: black;
+    font-weight: 800;
+    font-size: larger;
+    display: block;
+    padding: 10px;
+    transition: background-color 0.3s, color 0.3s;
+    width: 100%; /* Ocupa todo el ancho */
+}
+
+aside li:first-child a {
+    background-color: #0077b5;
+    color: #fff;
+    border-radius: 15px; /* Cambia el color del texto para que sea visible en el fondo */
+}
+
+aside li a:hover {
+    background-color: #0077b5;
+    color: #fff;
+    border-radius: 15px;
+    border: 1px solid #0077b5;
+}
+aside h2{
+    border-bottom: 5px solid rgb(6, 72, 153);
+}
+
+main {
+    grid-column: 2 / 5;
+    height: calc(100vh - 30px);
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+main:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Añade una sombra sutil al hacer hover */
+}
+.contendor-imag{
+    width: 700px;
+    height: 400px;
+    margin: 0 auto;
+}
+.contendor-imag img{
+    border-radius: 15px;
+}
+main article p{
+    font-weight: bolder;
+    font-size: medium;
+    padding: 5px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+section {
+    border-radius: 10px;
+    padding: 5px;
+    border: 1px solid black;
+}
+section:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Añade una sombra sutil al hacer hover */
+}
+section img{
+    border-radius: 10px;
+}
+
+.registro{
+    border-radius: 10px;
+    border: 1px solid black;
+}
+.registro form{
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.registro form h2{
+    border-bottom: 5px solid rgb(6, 72, 153);
+}
+button{
+    margin-top: 10px;
+    width: 160px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #3b5998;
+    color:#fff9f9
+}
+button:hover{
+    background-color: #064fed;
+    color:#ffffff
+}
+.publicidad{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+footer {
+    grid-column: 1 / 6;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 10px;
+    border:1px solid black;
+    transition: box-shadow 0.3s;
+}
+footer:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.pie-pagina {
+    display: flex;
+    align-items: center;
+}
+
+.pie-pagina ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.pie-pagina li {
+    margin-right: 10px;
+}
+
+.pie-pagina a {
+    display: block;
+    width: 30px; 
+    height: 30px;
+    background-color: #fff; 
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    font-size: 18px; 
+    color: #000; 
+    text-decoration: none;
+}
+.logo{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 100px;
+}
+.chatbot {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease;
+
+}
+
+.chatbot:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.chatbot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}

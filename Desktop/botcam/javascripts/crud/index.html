@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+      }
+      
+      input[type="text"], button {
+        margin-bottom: 10px;
+        padding: 8px;
+        width: 100%;
+      }
+      
+      button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      
+      button:hover {
+        background-color: #0056b3;
+      }
+      
+      #userList {
+        margin-top: 20px;
+        text-align: left;
+      }
+      
+</style>
+<body>
+    <div class="container">
+        <h1>Registro de Usuarios</h1>
+        <form id="userForm">
+        <input type="text" id="name" placeholder="Nombre">
+        <input type="text" id="email" placeholder="Correo electrónico">
+        <input type="text" id="age" placeholder="Edad">
+        <button id="registrar" type="submit">Registrar</button>
+        </form>
+        <input type="text" id="searchInput" placeholder="Buscar por nombre">
+        <button onclick="buscarYOrdenar()">Buscar</button>
+        <div id="userList"></div>
+  </div>
+    
+</body>
+<script>
+
+    let users = JSON.parse(localStorage.getItem('users')) || []; // Inicializa users con los datos de localStorage o un arreglo vacío
+    let editando = false;
+
+    const registrar = document.getElementById("registrar");
+    const name = document.getElementById('name');
+    const email = document.getElementById('email');
+    const age = document.getElementById('age');
+    const formulario = document.getElementById('userForm');
+
+    registrar.addEventListener("click", validarFormulario);
+    formulario.addEventListener("submit", validarFormulario);
+
+    function validarFormulario(e) {
+        e.preventDefault();
+        if(name.value === '' || email.value === '' || isNaN(age.value)){
+            alert('Por favor ingrese nombre y correo electrónico');
+            return;
+        }
+        if(editando){
+            editarEmpleado();
+            editando = false;
+        } else {
+            agregarEmpleado();
+        }
+    }
+
+    function agregarEmpleado(){
+        const obj = {
+            'id': Date.now(),
+            'nombre': name.value.trim(),
+            'email': email.value.trim(),
+            'age': parseInt(age.value)
+        };
+
+
+        users=[...users,obj];
+        guardarUsuariosEnLocalStorage(); // Guardar los usuarios actualizados en localStorage
+        displayUsers();
+        formulario.reset();
+    }
+
+    function buscarYOrdenar() {
+        const searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
+        const index = users.findIndex(user => user.nombre.toLowerCase() === searchTerm);
+        if (index !== -1) {
+            const encontrado = users.splice(index, 1)[0];
+            users.unshift(encontrado);
+            guardarUsuariosEnLocalStorage(); // Guardar los usuarios actualizados en localStorage
+            displayUsers();
+        } else {
+            alert('No se encontró el elemento.');
+        }
+    }
+
+    function displayUsers() {
+
+        const userList = document.getElementById('userList');
+
+        while(userList.firstChild){
+            userList.removeChild(userList.firstChild);
+        }
+
+        users.forEach(user => {
+            const userInfo = document.createElement('div');
+            userInfo.innerHTML = `
+                <strong>Nombre:</strong> ${user.nombre} <br>
+                <strong>Correo electrónico:</strong> ${user.email} <br>
+                <strong>Edad:</strong> ${user.age} <br>
+                <button onclick="deleteUser(${user.id})">Eliminar</button>
+                <button onclick="updateUser(${user.id})">Modificar</button>
+            `;
+            userList.appendChild(userInfo);
+        });
+
+    }
+
+    function editarEmpleado(){
+        const id = parseInt(document.getElementById('registrar').dataset.id);
+        users.forEach(user => {
+            if(user.id === id){
+                user.nombre = name.value;
+                user.email = email.value;
+                user.age = age.value;
+            }
+        });
+        guardarUsuariosEnLocalStorage(); // Guardar los usuarios actualizados en localStorage
+        displayUsers();
+        formulario.reset();
+        document.getElementById('registrar').textContent = 'Registrar';
+    }
+
+    function updateUser(id) {
+        const user = users.find(user => user.id === id);
+        name.value = user.nombre;
+        email.value = user.email;
+        age.value = user.age;
+        document.getElementById('registrar').textContent = 'Modificar';
+        document.getElementById('registrar').dataset.id = id;
+        editando = true;
+    }
+
+    function deleteUser(id) {
+        users = users.filter(user => user.id !== id);
+        guardarUsuariosEnLocalStorage(); // Guardar los usuarios actualizados en localStorage
+        displayUsers();
+    }
+
+    // Función para guardar los usuarios en localStorage
+    function guardarUsuariosEnLocalStorage() {
+        localStorage.setItem('users', JSON.stringify(users));
+    }
+
+
+</script>
+</html>

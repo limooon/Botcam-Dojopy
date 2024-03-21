@@ -1,0 +1,217 @@
+<doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  </head>
+  <style>
+    body{
+        background-color: black;
+        color: aliceblue;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: larger;
+    }
+    #borrar svg{
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 50px;
+        cursor: pointer;
+    }
+    #borrar svg:hover{
+        color: brown;
+    }
+    #editar svg{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 50px;
+        cursor: pointer;
+    }
+    #editar svg:hover{
+        color: rgb(185, 154, 12);
+    }
+  </style>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary mb-5">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input id="serch" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button id="btnSerch" class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    <form class="mb-5">
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre">
+        </div>
+        <div class="mb-3">
+            <label for="edad" class="form-label">Edad</label>
+            <input type="number" class="form-control" id="edad">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password">
+        </div>
+        <div class="d-grid gap-2">
+            <button id="agregar" class="btn btn-primary agregar" type="button">Agregar</button>
+            <button id="resetear" class="btn btn-primary resetear" type="button">Resetear</button>
+        </div>
+      </form>
+      <div class="container">
+        <table class="table table-dark table-bordered border-primary w-50 m-auto">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Edad</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">contraseña</th>
+                    <th scope="col">Eliminar</th>
+                    <th scope="col">Editar</th>
+                </tr>
+            </thead>
+            <tbody id="datos-tabla">
+
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+  <script>
+   
+      // Tu código JavaScript aquí
+      const tabla = document.querySelector('#datos-tabla');
+      const agregar = document.querySelector('#agregar');
+      const resetear = document.querySelector('#resetear');
+      const serch = document.querySelector('#serch');
+      const btnserch = document.querySelector('#btnSerch');
+      const Editar = document.querySelector('#editar');
+      const arrayObjetos = [];
+  
+      agregar.addEventListener('click', AgregarObjeto);
+      resetear.addEventListener('click', ResetarObjetos);
+      btnSerch.addEventListener('click', BuscarObjetos);
+      //Editar.addEventListener('click', EditarObjeto);
+  
+      function AgregarObjeto(e) {
+          console.log('agregando..');
+          const usuario = {
+              id:Date.now().toString(),
+              nombre: document.querySelector('#nombre').value,
+              edad: document.querySelector('#edad').value,
+              email: document.querySelector('#email').value,
+              password: document.querySelector('#password').value,
+  
+          };
+          arrayObjetos.push(usuario);
+          console.log(arrayObjetos);
+          mostrarObjetos(arrayObjetos);
+  
+          //ResetarObjetos();
+  
+      }
+
+      function EditarObjeto(email) {
+        // Buscar el índice del objeto con el ID proporcionado
+        const indice = arrayObjetos.findIndex(objeto => objeto.email === email);
+        
+        // Verificar si se encontró el objeto
+        if (indice !== -1) {
+            // Obtener el objeto a editar
+            const objetoEditado = arrayObjetos[indice];
+    
+            // Actualizar las propiedades del objeto con los nuevos valores del formulario
+            objetoEditado.nombre = document.querySelector('#nombre').value;
+            objetoEditado.edad = document.querySelector('#edad').value;
+            objetoEditado.email = document.querySelector('#email').value;
+            objetoEditado.password = document.querySelector('#password').value;
+    
+            // Mostrar los objetos actualizados en la tabla
+            mostrarObjetos();
+        } else {
+            console.error('El objeto con el ID especificado no se encontró en el arreglo.');
+        }
+    }
+  
+      function ResetarObjetos() {
+          document.querySelector('#nombre').value = '';
+          document.querySelector('#email').value = '';
+          document.querySelector('#password').value = '';
+          document.querySelector('#edad').value = '';
+      }
+  
+      function BuscarObjetos() {
+  
+      }
+ 
+  
+  function BorrarObjetos(email) {
+      const indice = arrayObjetos.findIndex(objeto => objeto.email === email);
+      if (indice !== -1) {
+          arrayObjetos.splice(indice, 1);
+          const filaAEliminar = document.querySelector('.elementos');
+          if (filaAEliminar) {
+              filaAEliminar.remove();
+          } else {
+              console.error('No se encontró la fila correspondiente en la tabla HTML.');
+          }
+      } else {
+          console.error('El objeto con el correo electrónico especificado no se encontró en el arreglo.');
+      }
+      console.log(arrayObjetos)
+  }
+  
+  function mostrarObjetos() {
+      const tr = document.createElement('tr');
+      tr.classList.add('elementos');
+      arrayObjetos.forEach(e => {
+          tr.innerHTML = `
+              <td>${e.id}</td>
+              <td>${e.nombre}</td>
+              <td>${e.edad}</td>
+              <td>${e.email}</td>
+              <td>${e.password}</td>
+              <td id="borrar" onclick="BorrarObjetos('${e.email}')">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                      <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                      <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                  </svg>
+              </td>
+              <td id="editar"  onclick="EditarObjeto('${e.email}')">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-file-earmark-plus" viewBox="0 0 16 16">
+                      <path d="M8 6.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 .5-.5"/>
+                      <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5z"/>
+                  </svg>
+              </td>
+          `;
+          tabla.appendChild(tr);
+      });
+  }
+  
+    
+
+  </script>
+</html>

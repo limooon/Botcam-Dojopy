@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Pedidos</title>
+  </head>
+  <!--los estylos se realizaron con ayuda de la inteligencia artificial de la plataforma de dojo-->
+  <style>
+    body {
+      background-color: #f2f2f2;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    head a{
+      text-transform: uppercase;
+    }
+
+    .formulario {
+      width: 50%;
+      margin: 0 auto;
+      margin-top: 15px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    }
+    
+
+    .formulario div {
+      margin-bottom: 5px;
+    }
+
+    .formulario label {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .formulario input,
+    .formulario textarea,
+    .formulario select {
+      width: calc(100% - 22px);
+      height: 30px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      padding: 0 10px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .formulario textarea {
+      height: 100px;
+      resize: vertical;
+    }
+    .formulario button {
+      width: 100%;
+      height: 40px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      padding: 0 10px;
+      background-color: #f2f2f2;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .formulario button:hover {
+      background-color: #ccc;
+    }
+
+    .seleciones {
+      width: 50%;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 5px;
+      margin-top: 0px;
+    }
+
+    .seleciones h2 {
+      text-align: center;
+      margin-top: 0px;
+    }
+
+    .contenedores,
+    .contenedor {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .contenedores h3 {
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .contenedor label {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .contenedor textarea {
+      width: calc(100% - 22px);
+      height: 60px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      padding: 0 10px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+    .fecha-hora {
+      width: calc(100% - 22px);
+      height: 30px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      padding: 0 10px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+    img {
+      position: absolute;
+      margin-top: 430px;
+    }
+    h1 {
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 50px;
+    }
+    h3 {
+      text-align: center;
+    }
+    .cheks {
+      display: flex;
+      flex-direction: row;
+      height: 100px;
+      width: 100%;
+    }
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+    #registro{
+      color: black;
+      text-decoration: none;
+    }
+  </style>
+  <body>
+    <head>
+      <a href="index.html" id="registro">
+        <svg style="margin-left: 5px;" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-r-circle" viewBox="0 0 16 16">
+            <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.5 4.002h3.11c1.71 0 2.741.973 2.741 2.46 0 1.138-.667 1.94-1.495 2.24L11.5 12H9.98L8.52 8.924H6.836V12H5.5zm1.335 1.09v2.777h1.549c.995 0 1.573-.463 1.573-1.36 0-.913-.596-1.417-1.537-1.417z"/>
+          </svg>
+        Regresar
+    </a>
+    </head>
+    <main>
+      <div style="text-align: center;  margin-bottom: 30px;">
+        <h2 style="text-align: center;">Sobre nosotros:</h2>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit ad dolor odit accusantium ea velit veniam nobis itaque repudiandae distinctio, architecto, sunt in, aut eius dolore facere eveniet reiciendis necessitatibus?
+      </div>
+      <div class="formulario">
+        <h1>Contactenos</h1>
+        <form action="" method="post">
+          <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" />
+          </div>
+          <div>
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" name="apellidos" />
+          </div>
+          <div>
+            <label for="celular">Celular:</label>
+            <input type="tel" id="celular" name="celular" />
+          </div>
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" />
+          </div>
+          <div>
+            <label for="ciudad">Ciudad:</label>
+            <input type="text" id="ciudad" name="ciudad" />
+          </div>
+          <div>
+            <label for="codigoP">Codigo postal:</label>
+            <input type="tel" id="codigoP" name="codigoP" />
+          </div>
+          <textarea name="Descripcion" id="Descripcion" cols="30" rows="10" placeholder="Descripcion"></textarea>
+          <button type="submit">Enviar datos</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

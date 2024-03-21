@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        background-color: rgb(123, 125, 126);
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(2,1fr);
+        gap: 10px;
+        width: 800px;
+        height: 700px;
+        margin: 0 auto;
+        margin-top: 30px;
+        padding: 10px;
+        border-radius: 15px;
+    }
+    .caja-1 {
+        background-color: antiquewhite;
+        color: black;
+        border-radius: 15px;
+        overflow: hidden; /* Para asegurarse de que la imagen no sobresalga de la caja */
+        position: relative;
+        border:1px solid black; /* Para posicionar el contenido de manera relativa */
+    }
+    
+    .caja-1 img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 15px;
+        opacity: 0.8; /* Opacidad inicial para la transición */
+        transition: opacity 0.5s ease; /* Transición suave de 0.5 segundos */
+    }
+    
+    .caja-1:hover img {
+        opacity: 1; /* Opacidad completa al pasar el ratón sobre la caja */
+    }
+    .caja-2 {
+        background-color: antiquewhite;
+        color: black;
+        border-radius: 15px;
+        overflow: hidden; /* Para asegurarse de que la imagen no sobresalga de la caja */
+        position: relative;
+        border:1px solid black; /* Para posicionar el contenido de manera relativa */
+    }
+    
+    .caja-2 img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 15px;
+        opacity: 0.8; /* Opacidad inicial para la transición */
+        transition: opacity 0.5s ease; /* Transición suave de 0.5 segundos */
+    }
+    
+    .caja-2:hover img {
+        opacity: 1; /* Opacidad completa al pasar el ratón sobre la caja */
+    }
+    .caja-3 {
+        background-color: antiquewhite;
+        color: black;
+        border-radius: 15px;
+        overflow: hidden; /* Para asegurarse de que la imagen no sobresalga de la caja */
+        position: relative;
+        border:1px solid black; /* Para posicionar el contenido de manera relativa */
+    }
+    
+    .caja-3 img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 15px;
+        opacity: 0.8; /* Opacidad inicial para la transición */
+        transition: opacity 0.5s ease; /* Transición suave de 0.5 segundos */
+    }
+    
+    .caja-3:hover img {
+        opacity: 1; /* Opacidad completa al pasar el ratón sobre la caja */
+    }
+    .caja-4 {
+        background-color: antiquewhite;
+        color: black;
+        border-radius: 15px;
+        overflow: hidden; /* Para asegurarse de que la imagen no sobresalga de la caja */
+        position: relative; /* Para posicionar el contenido de manera relativa */
+        border:1px solid black;
+    }
+    
+    .caja-4 img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 15px;
+        opacity: 0.8; /* Opacidad inicial para la transición */
+        transition: opacity 0.5s ease; /* Transición suave de 0.5 segundos */
+    }
+    
+    .caja-4:hover img {
+        opacity: 1; /* Opacidad completa al pasar el ratón sobre la caja */
+    }
+    
+    .caja-5{
+        color: black;
+        border-radius: 15px;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        width:  300px;
+    }
+    
+    .sub-caja-1,
+    .sub-caja-2 {
+        width: 95%;
+        height: 180px;
+        border-radius: 15px;
+        border: 1px solid black;
+        overflow: hidden;
+    }
+
+    .sub-caja-1 img,
+    .sub-caja-2 img {
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        opacity: 0.8;
+        transition: opacity 0.5s ease;
+    }
+
+    .sub-caja-1:hover img,
+    .sub-caja-2:hover img {
+        opacity: 1;
+    }
+    .caja-6 {
+        background-color: antiquewhite;
+        color: black;
+        border-radius: 15px;
+        overflow: hidden; /* Para asegurarse de que la imagen no sobresalga de la caja */
+        position: relative; /* Para posicionar el contenido de manera relativa */
+        border:1px solid black;
+    }
+    
+    .caja-6 img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 15px;
+        opacity: 0.8; /* Opacidad inicial para la transición */
+        transition: opacity 0.5s ease; /* Transición suave de 0.5 segundos */
+    }
+    
+    .caja-6:hover img {
+        opacity: 1; /* Opacidad completa al pasar el ratón sobre la caja */
+    }
+    
+</style>
+<body>
+    <div class="container">
+        <div class="caja-1">
+            <img  src="https://musicandote.com/wp-content/uploads/2013/09/m%C3%BAsica-electr%C3%B3nica.jpg" alt="imagen">
+        </div>
+        <div class="caja-2">
+             <img  src="https://blog.hubspot.es/hubfs/media/mejoresbancosmusicalibrederechos.jpeg" alt="imagen">
+        </div>
+        <div class="caja-3">
+            <img  src="https://www.billboard.com/wp-content/uploads/2023/08/best-frontpeople-graphic-2023-billboard-1548.jpg" alt="imagen">
+        </div>
+        <div class="caja-4">
+            <img  src="https://images.ctfassets.net/ojtnytzl1djm/6Nz3BgglHryjPtShO7fuKV/32235a1beb608d234601c3f50c43dee1/feelfarbig-magazine-LD6IRW3mUU8-unsplash.jpg?w=400&fm=jpg&q=80" alt="imagen">
+        </div>
+        <div class="caja-5">
+            <div class="sub-caja-1">
+                <img  src="https://www.shutterstock.com/image-vector/colorful-abstract-poster-cover-design-260nw-1191993241.jpg" alt="imagen">
+            </div>
+            <div class="sub-caja-2">
+                <img  src="https://wololosound.com/wp-content/uploads/musica-catalogos.jpeg" alt="imagen">
+            </div>
+        </div>
+        <div class="caja-6">
+            <img  src="https://latinwmg.com/wp-content/uploads/2019/04/musica_electronica.jpg" alt="imagen">
+        </div>
+    
+    </div>
+</body>
+</html>

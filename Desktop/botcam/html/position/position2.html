@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica</title>
+</head>
+<style>
+    body{
+            background-color: aquamarine;
+            font-size: larger;
+            text-align: center;
+    }
+ .box-1{
+    position: absolute;
+    top: 0;
+    right:0;
+    bottom: 100px;
+    background-color: blueviolet;
+    border: 5px solid black;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    color: aliceblue;
+ }
+ .box-1:hover(){
+    border-radius: 30px;
+    height: 200px;
+ }
+ .box-2{
+    background-color: blueviolet;
+    position: relative;
+    top:0px;
+    left: 300px;
+    border: 5px solid black;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    margin: 10px;
+    color: aliceblue;
+    z-index: 2;
+    visibility: hidden;
+ }
+ .box-3{
+    display: none;
+    position: relative;
+    top: -60px;
+    left: 380px;
+    bottom: 100px;
+    background-color: blueviolet;
+    border: 5px solid black;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    margin: 10px;
+    color: aliceblue;
+    z-index: 1;
+ }
+</style>
+<body>
+    <main>
+        <div class="box-1">box1</div>
+        <div class="box-2">box2</div>
+        <div class="box-3">box3</div>
+    </main>
+    
+</body>
+</html>
